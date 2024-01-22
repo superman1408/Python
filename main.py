@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from Module.Addition import adding
 
 
 class Ui_Main(object):
@@ -73,6 +74,9 @@ class Ui_Main(object):
 
         self.retranslateUi(Main)
         QtCore.QMetaObject.connectSlotsByName(Main)
+        
+        
+        self.pushButton.clicked.connect(self.processing)
 
     def retranslateUi(self, Main):
         _translate = QtCore.QCoreApplication.translate
@@ -82,6 +86,22 @@ class Ui_Main(object):
         self.label_2.setText(_translate("Main", "Value B:    "))
         self.pushButton.setText(_translate("Main", "Calculate"))
         self.label_3.setText(_translate("Main", "Result Display"))
+        
+    
+    
+    
+    
+    
+    
+    def processing(self):
+        print("Button is clicked...!!!")
+        sum = adding(33, 44)
+        # add = sum
+        # print(type(add))
+        print(sum)
+        self.label_3.setText("Addition: "+ sum)
+        
+        
 
 
 if __name__ == "__main__":
